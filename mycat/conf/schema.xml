@@ -9,9 +9,9 @@
         <!--t_task_test表根据org_code列,进行一致性hash规则分片-->
         <table name="t_task_test" dataNode="dn1,dn2" rule="sharding-by-murmur-orgcode"></table>
     </schema>
-    <schema name="xxl-job" checkSQLschema="false" sqlMaxLimit="1000">
+    <schema name="xxl-job" checkSQLschema="false" sqlMaxLimit="1000" dataNode="dn1">
     </schema>
-    <schema name="pub" checkSQLschema="false" sqlMaxLimit="1000">
+    <schema name="pub" checkSQLschema="false" sqlMaxLimit="1000" dataNode="dn1">
     </schema>
 
     <!-- 定义MyCat的数据节点(分片) -->
