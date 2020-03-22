@@ -9,15 +9,18 @@
         <!--t_task_test表根据org_code列,进行一致性hash规则分片-->
         <table name="t_task_test" dataNode="dn1,dn2" rule="sharding-by-murmur-orgcode"></table>
     </schema>
-    <schema name="xxl-job" checkSQLschema="false" sqlMaxLimit="1000" dataNode="dn1">
+    <schema name="xxl-job" checkSQLschema="false" sqlMaxLimit="1000" dataNode="xn1">
     </schema>
-    <schema name="pub" checkSQLschema="false" sqlMaxLimit="1000" dataNode="dn1">
+    <schema name="pub" checkSQLschema="false" sqlMaxLimit="1000" dataNode="pn1">
     </schema>
 
     <!-- 定义MyCat的数据节点(分片) -->
     <!-- 设置dataNode 对应的数据库,及 mycat 连接的地址dataHost -->
-    <dataNode name="dn1" dataHost="dh1" database="test_db,xxl-job,pub"/>
+    <dataNode name="dn1" dataHost="dh1" database="test_db"/>
     <dataNode name="dn2" dataHost="dh2" database="test_db"/>
+
+    <dataNode name="xn1" dataHost="dh1" database="xxl-job"/>
+    <dataNode name="pn1" dataHost="dh1" database="pub"/>
 
 
     <!-- mycat 逻辑主机dataHost对应的物理主机.其中也设置对应的mysql登陆信息 -->
