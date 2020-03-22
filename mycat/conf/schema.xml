@@ -26,18 +26,18 @@
         <!--心跳检测 -->
         <heartbeat>select user()</heartbeat>
         <!--配置后台数据库的IP地址和端口号，还有账号密码 -->
-        <writeHost host="m1" url="192.18.0.2:3306" user="root" password="password">
-            <readHost host="s1" url="192.18.0.3:3306" user="root" password="password" />
-            <readHost host="s2" url="192.18.0.4:3306" user="root" password="password" />
+        <writeHost host="m1" url="192.18.0.2:3306" user="root" password="pubw123_">
+            <readHost host="s1" url="192.18.0.3:3306" user="root" password="pubw123_" />
+            <readHost host="s2" url="192.18.0.4:3306" user="root" password="pubw123_" />
         </writeHost>
     </dataHost>
 
     <dataHost name="dh2" maxCon="1000" minCon="10" balance="1"
               writeType="0" dbType="mysql" dbDriver="native" switchType="-1" slaveThreshold="100">
         <heartbeat>select user()</heartbeat>
-        <writeHost host="m2" url="192.18.0.5:3306" user="root" password="password">
-            <readHost host="s3" url="192.18.0.6:3306" user="root" password="password" />
-            <readHost host="s4" url="192.18.0.7:3306" user="root" password="password" />
+        <writeHost host="m2" url="192.18.0.5:3306" user="root" password="pubw123_">
+            <readHost host="s3" url="192.18.0.6:3306" user="root" password="pubw123_" />
+            <readHost host="s4" url="192.18.0.7:3306" user="root" password="pubw123_" />
         </writeHost>
     </dataHost>
 

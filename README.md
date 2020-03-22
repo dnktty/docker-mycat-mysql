@@ -14,7 +14,7 @@
 
 ​	userName:root
 
-​	password:password
+​	password:pubw123_
 
 
 
@@ -24,13 +24,13 @@
 
 ​		userName:root
 
-​		password:password
+​		password:pubw123_
 
 ​	只读帐户:
 
-​		userName:guest
+​		userName:pub_read
 
-​		password:guest
+​		password:pubread123_
 
 
 

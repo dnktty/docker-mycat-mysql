@@ -91,8 +91,8 @@
          -->
     </user>
     <!--只读帐户-->
-    <user name="guest">
-        <property name="password">guest</property>
+    <user name="pub_read">
+        <property name="password">pubread123_</property>
         <property name="schemas">test_db</property>
         <property name="readOnly">true</property>
     </user>
