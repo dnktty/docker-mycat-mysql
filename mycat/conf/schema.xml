@@ -12,7 +12,7 @@
 
     <!-- 定义MyCat的数据节点(分片) -->
     <!-- 设置dataNode 对应的数据库,及 mycat 连接的地址dataHost -->
-    <dataNode name="dn1" dataHost="dh1" database="test_db"/>
+    <dataNode name="dn1" dataHost="dh1" database="test_db,xxl-job,pub"/>
     <dataNode name="dn2" dataHost="dh2" database="test_db"/>
 
 

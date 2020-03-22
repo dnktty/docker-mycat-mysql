@@ -77,8 +77,8 @@
     </firewall>-->
 
     <user name="root">
-        <property name="password">password</property>
-        <property name="schemas">test_db</property>
+        <property name="password">pubw123_</property>
+        <property name="schemas">test_db,xxl-job,pub</property>
 
         <!-- 表级 DML 权限设置 -->
         <!--
@@ -93,7 +93,7 @@
     <!--只读帐户-->
     <user name="pub_read">
         <property name="password">pubread123_</property>
-        <property name="schemas">test_db</property>
+        <property name="schemas">test_db,xxl-job,pub</property>
         <property name="readOnly">true</property>
     </user>
 
