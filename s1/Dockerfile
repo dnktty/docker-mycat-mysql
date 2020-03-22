@@ -1,5 +1,5 @@
 FROM mysql:5.7
-MAINTAINER <gokuit.cn>
+MAINTAINER <pub123.cn>
 ENV MYSQL_USER user
 ENV MYSQL_ROOT_PASSWORD password
 ENV MYSQL_PASSWORD password

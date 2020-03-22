@@ -1,3 +1,3 @@
-create user gokuit;
-grant REPLICATION SLAVE on *.* to 'gokuit'@'192.18.0.%' IDENTIFIED by 'gokuit';
+create user pub123;
+grant REPLICATION SLAVE on *.* to 'pub123'@'192.18.0.%' IDENTIFIED by 'pub123';
 flush privileges;

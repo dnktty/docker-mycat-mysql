@@ -62,10 +62,10 @@ show master status;
 show slave status \G;
 
 #S1,S2执行Master主从复制,读取Master的binlog文件和位置信息
-change master to master_host='192.18.0.2', master_user='gokuit', master_password='gokuit', master_port=3306, master_log_file='mysql-bin.000003', master_log_pos= 154, master_connect_retry=30;
+change master to master_host='192.18.0.2', master_user='pub123', master_password='pub123', master_port=3306, master_log_file='mysql-bin.000003', master_log_pos= 154, master_connect_retry=30;
 
 #S3,S4执行Master主从复制,读取Master的binlog文件和位置信息
-change master to master_host='192.18.0.5', master_user='gokuit', master_password='gokuit', master_port=3306, master_log_file='mysql-bin.000003', master_log_pos= 154, master_connect_retry=30;
+change master to master_host='192.18.0.5', master_user='pub123', master_password='pub123', master_port=3306, master_log_file='mysql-bin.000003', master_log_pos= 154, master_connect_retry=30;
 
 #同时启动I/O 线程和SQL线程;I/O线程从主库读取bin log，并存储到relay log中继日志文件中。SQL线程读取中继日志，解析后，在从库重放。
 start slave;
@@ -195,14 +195,14 @@ owners.
 
 Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
-mysql> change master to master_host='192.18.0.2', master_user='gokuit', master_password='gokuit', master_port=3306, master_log_file='mysql-bin.000003', master_log_pos= 154, master_connect_retry=30;
+mysql> change master to master_host='192.18.0.2', master_user='pub123', master_password='pub123', master_port=3306, master_log_file='mysql-bin.000003', master_log_pos= 154, master_connect_retry=30;
 Query OK, 0 rows affected, 2 warnings (0.01 sec)
 
 mysql> show slave status \G;
 *************************** 1. row ***************************
                Slave_IO_State: 
                   Master_Host: 192.18.0.2
-                  Master_User: gokuit
+                  Master_User: pub123
                   Master_Port: 3306
                 Connect_Retry: 30
               Master_Log_File: mysql-bin.000003
@@ -269,7 +269,7 @@ mysql> show slave status \G;
 *************************** 1. row ***************************
                Slave_IO_State: Waiting for master to send event
                   Master_Host: 192.18.0.2
-                  Master_User: gokuit
+                  Master_User: pub123
                   Master_Port: 3306
                 Connect_Retry: 30
               Master_Log_File: mysql-bin.000003
@@ -352,7 +352,7 @@ owners.
 
 Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
-mysql> change master to master_host='192.18.0.2', master_user='gokuit', master_password='gokuit', master_port=3306, master_log_file='mysql-bin.000003', master_log_pos= 154, master_connect_retry=30;
+mysql> change master to master_host='192.18.0.2', master_user='pub123', master_password='pub123', master_port=3306, master_log_file='mysql-bin.000003', master_log_pos= 154, master_connect_retry=30;
 Query OK, 0 rows affected, 2 warnings (0.01 sec)
 
 mysql> start slave;
@@ -362,7 +362,7 @@ mysql> show slave status \G;
 *************************** 1. row ***************************
                Slave_IO_State: Waiting for master to send event
                   Master_Host: 192.18.0.2
-                  Master_User: gokuit
+                  Master_User: pub123
                   Master_Port: 3306
                 Connect_Retry: 30
               Master_Log_File: mysql-bin.000003
@@ -445,7 +445,7 @@ owners.
 
 Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
-mysql> change master to master_host='192.18.0.5', master_user='gokuit', master_password='gokuit', master_port=3306, master_log_file='mysql-bin.000003', master_log_pos= 154, master_connect_retry=30;
+mysql> change master to master_host='192.18.0.5', master_user='pub123', master_password='pub123', master_port=3306, master_log_file='mysql-bin.000003', master_log_pos= 154, master_connect_retry=30;
 Query OK, 0 rows affected, 2 warnings (0.01 sec)
 
 mysql> start slave;
@@ -455,7 +455,7 @@ mysql> show slave status \G;
 *************************** 1. row ***************************
                Slave_IO_State: Waiting for master to send event
                   Master_Host: 192.18.0.5
-                  Master_User: gokuit
+                  Master_User: pub123
                   Master_Port: 3306
                 Connect_Retry: 30
               Master_Log_File: mysql-bin.000003
@@ -538,7 +538,7 @@ owners.
 
 Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
-mysql> change master to master_host='192.18.0.5', master_user='gokuit', master_password='gokuit', master_port=3306, master_log_file='mysql-bin.000003', master_log_pos= 154, master_connect_retry=30;
+mysql> change master to master_host='192.18.0.5', master_user='pub123', master_password='pub123', master_port=3306, master_log_file='mysql-bin.000003', master_log_pos= 154, master_connect_retry=30;
 Query OK, 0 rows affected, 2 warnings (0.01 sec)
 
 mysql> start slave;
@@ -549,7 +549,7 @@ mysql> show slave status \G;
 *************************** 1. row ***************************
                Slave_IO_State: Waiting for master to send event
                   Master_Host: 192.18.0.5
-                  Master_User: gokuit
+                  Master_User: pub123
                   Master_Port: 3306
                 Connect_Retry: 30
               Master_Log_File: mysql-bin.000003
@@ -780,11 +780,11 @@ SELECT * FROM t_task_test;
 
 #### 创建数据同步用户
 
-在Master数据库创建数据同步用户，授予用户 gokuit REPLICATION SLAVE权限，用于在主从库之间同步数据。
+在Master数据库创建数据同步用户，授予用户 pub123 REPLICATION SLAVE权限，用于在主从库之间同步数据。
 
 ```
-create user gokuit;
-grant REPLICATION SLAVE on *.* to 'gokuit'@'%' IDENTIFIED by 'gokuit';
+create user pub123;
+grant REPLICATION SLAVE on *.* to 'pub123'@'%' IDENTIFIED by 'pub123';
 flush privileges;
 ```
 
@@ -831,7 +831,7 @@ log-bin=mysql-slave-bin
 ##### 示例:
 
 ```mysql
-change master to master_host='192.18.0.2', master_user='gokuit', master_password='gokuit', master_port=3306, master_log_file='mysql-bin.000003', master_log_pos= 154, master_connect_retry=30;
+change master to master_host='192.18.0.2', master_user='pub123', master_password='pub123', master_port=3306, master_log_file='mysql-bin.000003', master_log_pos= 154, master_connect_retry=30;
 
 ```
 
