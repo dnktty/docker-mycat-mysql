@@ -47,53 +47,53 @@ services:
         ipv4_address: 192.18.0.4
     links:
       - m1
-  m2:
-    build: ./m2
-    container_name: m2
-    volumes:
-    - ./m2/mysql/my.cnf:/etc/mysql/my.cnf
-    - ./m2/data:/var/lib/mysql
-    - ./m2/logs:/var/log/mysql
-    restart: always
-    ports:
-      - "3310:3306"
-    networks:
-      mysql:
-        ipv4_address: 192.18.0.5
-  s3:
-    build: ./s3
-    container_name: s3
-    volumes:
-    - ./s3/mysql/my.cnf:/etc/mysql/my.cnf
-    - ./s3/mysql/data:/var/lib/mysql
-    - ./s3/logs:/var/log/mysql
-    restart: always
-    ports:
-    - "3311:3306"
-    depends_on:
-    - m2
-    networks:
-      mysql:
-        ipv4_address: 192.18.0.6
-    links:
-    - m2
-  s4:
-    build: ./s4
-    container_name: s4
-    volumes:
-    - ./s4/mysql/my.cnf:/etc/mysql/my.cnf
-    - ./s4/mysql/data:/var/lib/mysql
-    - ./s4/logs:/var/log/mysql
-    restart: always
-    ports:
-    - "3312:3306"
-    depends_on:
-    - m2
-    networks:
-      mysql:
-        ipv4_address: 192.18.0.7
-    links:
-    - m2
+#  m2:
+#    build: ./m2
+#    container_name: m2
+#    volumes:
+#    - ./m2/mysql/my.cnf:/etc/mysql/my.cnf
+#    - ./m2/data:/var/lib/mysql
+#    - ./m2/logs:/var/log/mysql
+#    restart: always
+#    ports:
+#      - "3310:3306"
+#    networks:
+#      mysql:
+#        ipv4_address: 192.18.0.5
+#  s3:
+#    build: ./s3
+#    container_name: s3
+#    volumes:
+#    - ./s3/mysql/my.cnf:/etc/mysql/my.cnf
+#    - ./s3/mysql/data:/var/lib/mysql
+#    - ./s3/logs:/var/log/mysql
+#    restart: always
+#    ports:
+#    - "3311:3306"
+#    depends_on:
+#    - m2
+#    networks:
+#      mysql:
+#        ipv4_address: 192.18.0.6
+#    links:
+#    - m2
+#  s4:
+#    build: ./s4
+#    container_name: s4
+#    volumes:
+#    - ./s4/mysql/my.cnf:/etc/mysql/my.cnf
+#    - ./s4/mysql/data:/var/lib/mysql
+#    - ./s4/logs:/var/log/mysql
+#    restart: always
+#    ports:
+#    - "3312:3306"
+#    depends_on:
+#    - m2
+#    networks:
+#      mysql:
+#        ipv4_address: 192.18.0.7
+#    links:
+#    - m2
   mycat:
     build: ./mycat
     container_name: mycat
@@ -109,9 +109,9 @@ services:
       - m1
       - s1
       - s2
-      - m2
-      - s3
-      - s4
+#      - m2
+#      - s3
+#      - s4
     networks:
       mysql:
         ipv4_address: 192.18.0.8
